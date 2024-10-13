@@ -14,21 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-
-/* Auth */
-Route::post('register', 'RegisterController@register');
-Route::post('login', 'LoginController@login');
-
-/* Clientes */
-Route::get('wp_clientes', 'ClienteController@getWPClientes');
-Route::get('clientesIngresados', 'ClienteController@getClientesIngresados');
-Route::post('migrarClientes', 'ClienteController@migrarClientes');
-Route::post('enviarCotizacion', 'ClienteController@enviarCotizacion');
-
-/* Tipo Tramites */
-Route::get('conceptos', 'ClienteController@getConceptos');
-
